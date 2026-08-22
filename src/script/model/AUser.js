@@ -1,11 +1,27 @@
 class AUser {
-  constructor(userID, accountID, displayName) {}
+  _userId;
+  _accountId;
+  _displayName;
 
-  // Getter / Setter
-  get userID() {}
+  constructor() {
+    if (new.target === AUser) {
+      throw new TypeError('AUser is an abstract class and cannot be instantiated directly.');
+    }
+  }
 
-  get accountID() {}
+  get userId() {
+    throw new Error('userId is an abstract getter and must be implemented by a subclass.');
+  }
 
-  get displayName() {}
-  set displayName(value) {}
+  get accountId() {
+    throw new Error('accountId is an abstract getter and must be implemented by a subclass.');
+  }
+
+  get displayName() {
+    throw new Error('displayName is an abstract getter and must be implemented by a subclass.');
+  }
+
+  set displayName(value) {
+    throw new Error('displayName is an abstract setter and must be implemented by a subclass.');
+  }
 }

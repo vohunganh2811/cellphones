@@ -6,7 +6,6 @@ class Account extends AAccount {
         this._createAt = new Date();
     }
 
-    // Getter / Setter
     get phone() { return this._phone; }
     set phone(value) { this._phone = value; }
 
@@ -16,7 +15,6 @@ class Account extends AAccount {
     get createAt() { return this._createAt; }
     set createAt(value) { this._createAt = value; }
 
-    // Overide login
     login(phone, password, role) {
         if (phone === this.phone && password === this.password && role === this.role) {
             sessionStorage.setItem('loginInfo', JSON.stringify({
