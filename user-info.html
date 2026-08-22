@@ -24,7 +24,7 @@
 
         <form class="header__search" role="search" action="#" method="get">
           <label class="sr-only" for="site-search">Tìm sản phẩm</label>
-          <input id="site-search" name="q" type="search" placeholder="Bạn muốn mua gì hôm nay?">
+          <input id="site-search" name="q" type="search" placeholder="Bạn muốn mua gì hôm nay?" aria-label="Tìm sản phẩm">
           <button class="header__search-btn" type="submit" aria-label="Tìm kiếm sản phẩm">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-3.8-3.8"/></svg>
           </button>
@@ -58,58 +58,65 @@
         <div class="member-overview__cards">
           <article class="member-card">
             <div class="member-card__avatar">
-              <img src="assets/user-info/avata-ant.b574f3e9.svg" alt="" width="44" height="47">
+              <img src="assets/user-info/avata-ant.b574f3e9.svg" alt="" width="56" height="60">
             </div>
             <div class="member-card__info">
-              <div class="member-card__info-row">
-                <h2 class="member-card__name">Thành viên Smember</h2>
-                <span class="member-card__badge">Hạng Silver</span>
-              </div>
+              <h2 class="member-card__name">Thành viên Smember</h2>
               <div class="member-card__info-row">Số điện thoại: 09** *** ***</div>
+              <span class="member-card__badge">S-NULL</span>
               <div class="member-card__info-row">Cập nhật lại sau **/**/****</div>
             </div>
           </article>
 
-          <span aria-hidden="true"></span>
+          <span class="member-overview__divider" aria-hidden="true"></span>
 
-          <section class="stat-card" aria-label="Thống kê thành viên">
-            <dl class="stat-card__list">
+          <div class="stat-cluster">
+            <section class="stat-card" aria-label="Tổng số đơn hàng đã mua">
               <div class="stat-card__item">
                 <span class="stat-card__item-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5.2 6.2h1.35l.45 2.15h12.1a.85.85 0 0 1 .83 1.05l-1.15 5.15a1.6 1.6 0 0 1-1.56 1.25H9.05A1.7 1.7 0 0 1 7.4 14.4L5.2 6.2z" fill="#d70018"/><path d="M8.2 6.2H5.1L4.4 3.7H2.7" stroke="#d70018" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.4" cy="18.6" r="1.45" fill="#d70018"/><circle cx="16.3" cy="18.6" r="1.45" fill="#d70018"/></svg>
                 </span>
-                <div class="stat-card__item-content">
+                <dl class="stat-card__item-content">
                   <dt class="stat-card__item-label">Tổng số đơn hàng đã mua</dt>
                   <dd class="stat-card__item-value">8 đơn</dd>
-                </div>
+                </dl>
               </div>
+            </section>
+
+            <span class="member-overview__divider" aria-hidden="true"></span>
+
+            <section class="stat-card" aria-label="Tổng tiền tích lũy">
               <div class="stat-card__item">
                 <span class="stat-card__item-icon" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><rect x="3.2" y="6.2" width="17.6" height="11.6" rx="2.1" fill="#d70018"/><path d="M3.2 10.1h17.6" stroke="#fff0f1" stroke-width="1.7"/><rect x="6.1" y="13.1" width="4.4" height="2.15" rx="0.45" fill="#fff0f1"/></svg>
                 </span>
-                <div class="stat-card__item-content">
+                <dl class="stat-card__item-content">
                   <dt class="stat-card__item-label">Tổng tiền tích lũy</dt>
                   <dd class="stat-card__item-value">12.500.000đ</dd>
-                </div>
+                </dl>
               </div>
-            </dl>
-            <p class="stat-card__footer">Tổng tiền và số đơn hàng được tính chung từ CellphoneS và Điện Thoại Vui.</p>
-          </section>
+            </section>
 
-          <span aria-hidden="true"></span>
+            <p class="member-overview__notice">
+              <span class="member-overview__notice-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.2"/><path d="M12 7.6h.01"/></svg>
+              </span>
+              <span>Tổng tiền và số đơn hàng được tính chung từ CellphoneS và Điện Thoại Vui.</span>
+            </p>
+          </div>
 
           <section class="brand-switch" aria-label="Kênh thành viên">
             <p class="brand-switch__header">Bạn đang ở kênh thành viên</p>
             <div class="brand-switch__body">
               <img class="brand-switch__logo" src="assets/user-info/cellphones-icon.1b92082f.svg" alt="" width="56" height="56">
               <div class="brand-switch__actions">
-                <span class="brand-switch__action-row">cellphones.com.vn</span>
-                <button class="brand-switch__toggle" type="button" aria-label="Kênh ưu đãi hiện tại CellphoneS cellphones.com.vn">
+                <button class="brand-switch__toggle" type="button" aria-haspopup="listbox" aria-label="Kênh ưu đãi hiện tại CellphoneS">
                   <span class="brand-switch__toggle-label">CellphoneS</span>
                   <span class="brand-switch__toggle-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                   </span>
                 </button>
+                <span class="brand-switch__action-row">cellphones.com.vn</span>
               </div>
             </div>
           </section>
@@ -181,12 +188,9 @@
             </span>
             <span class="account-nav-item__label">Thông tin thu cũ</span>
           </a>
-          <a class="account-nav-item" href="#account-content">
-            <span class="account-nav-item__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5h8v2.8a4 4 0 0 1-8 0V4.5z"/><path d="M8 6H5.2A2.8 2.8 0 0 0 8 9.2"/><path d="M16 6h2.8A2.8 2.8 0 0 1 16 9.2"/><path d="M10.5 12.5V16h3v-3.5"/><path d="M12 16v3.5"/><path d="M8.5 19.5h7"/></svg>
-            </span>
-            <span class="account-nav-item__label">Hạng thành viên và ưu đãi</span>
-          </a>
+
+          <span class="account-nav__divider" aria-hidden="true"></span>
+
           <a class="account-nav-item" href="#account-content">
             <span class="account-nav-item__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="11.5" rx="1.8"/><path d="M9 8V6.2A1.7 1.7 0 0 1 10.7 4.5h2.6A1.7 1.7 0 0 1 15 6.2V8"/><path d="M3.5 13h17"/></svg>
@@ -199,9 +203,6 @@
             </span>
             <span class="account-nav-item__label">Ưu đãi S-Student và S-Teacher</span>
           </a>
-
-          <span class="account-nav__divider" aria-hidden="true"></span>
-
           <a class="account-nav-item" href="#account-content" aria-current="page">
             <span class="account-nav-item__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5c.9-3.5 3.4-5.4 6.5-5.4s5.6 1.9 6.5 5.4"/></svg>
@@ -243,10 +244,7 @@
           </button>
 
           <div class="app-promo">
-            <div class="app-promo__content">
-              <strong>Tải ứng dụng CellphoneS</strong>
-              <p>Mua sắm dễ dàng - Ưu đãi ngập tràn cùng app CellphoneS.</p>
-            </div>
+            <p class="app-promo__content">Mua sắm dễ dàng - Ưu đãi ngập tràn cùng app CellphoneS.</p>
             <div class="app-promo__badges">
               <span>
                 <img src="assets/user-info/QR_appGeneral-v2.webp" alt="QR code tải ứng dụng CellphoneS">
@@ -329,8 +327,8 @@
                 <button class="password-card__action" type="button">Thay đổi mật khẩu</button>
               </header>
               <div class="password-card__body">
-                <span class="password-card__body-label">Cập nhật lần cuối lúc</span>
-                <strong class="password-card__body-value">**/**/**** **:**</strong>
+                <span class="password-card__body-label">Cập nhật lần cuối lúc:</span>
+                <time class="password-card__body-value" datetime="2026-08-18T21:28">18/08/2026 21:28</time>
               </div>
             </article>
 
@@ -344,9 +342,14 @@
                     <span class="linked-item__icon" aria-hidden="true">
                       <img src="assets/user-info/logo-google.svg" alt="">
                     </span>
-                    <span>Google</span>
-                    <span>Đã liên kết</span>
-                    <button class="linked-item__action" type="button">Hủy liên kết</button>
+                    <span class="linked-item__name">Google</span>
+                    <span class="linked-item__status">Đã liên kết</span>
+                    <button class="linked-item__action" type="button">
+                      <span class="linked-item__action-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l1.96-1.96a5 5 0 0 0-7.07-7.07L11.2 5.74"/><path d="M14 11a5 5 0 0 0-7.54-.54L4.5 12.42a5 5 0 0 0 7.07 7.07l1.22-1.22"/></svg>
+                      </span>
+                      Hủy liên kết
+                    </button>
                   </div>
                 </li>
                 <li class="linked-accounts__item">
@@ -354,9 +357,14 @@
                     <span class="linked-item__icon" aria-hidden="true">
                       <img src="assets/user-info/logo-zalo.svg" alt="">
                     </span>
-                    <span>Zalo</span>
-                    <span>Chưa liên kết</span>
-                    <button class="linked-item__action" type="button">Liên kết</button>
+                    <span class="linked-item__name">Zalo</span>
+                    <span class="sr-only">Chưa liên kết</span>
+                    <button class="linked-item__action" type="button">
+                      <span class="linked-item__action-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l1.96-1.96a5 5 0 0 0-7.07-7.07L11.2 5.74"/><path d="M14 11a5 5 0 0 0-7.54-.54L4.5 12.42a5 5 0 0 0 7.07 7.07l1.22-1.22"/></svg>
+                      </span>
+                      Liên kết
+                    </button>
                   </div>
                 </li>
               </ul>
