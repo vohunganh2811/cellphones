@@ -238,6 +238,18 @@ a { text-decoration: none; color: inherit; }
 .login__form-field-message { display: none; margin: 0; font-size: 12px; color: #EF4444; }
 .login__form-field--error .login__form-field-message { display: block; }
 
+/* Trang thai loi do LoginController dieu khien: no set aria-invalid tren input
+   va ghi textContent vao cac o thong bao, nen CSS bam theo 2 tin hieu do. */
+.login__form-field-input[aria-invalid="true"],
+.login__form-field-input[aria-invalid="true"]:focus { border-color: #EF4444; }
+.login__form-field-message:not(:empty) { display: block; }
+
+.login__form-error { display: none; margin: 0; font-size: 13px; color: #EF4444; }
+.login__form-error:not(:empty) { display: block; }
+
+.login__form-caps { display: none; margin: 0; font-size: 12px; color: #B45309; }
+.login__form-caps:not(:empty) { display: block; }
+
 .login__form-field-wrap { position: relative; }
 .login__form-field-wrap .login__form-field-input { padding-right: 36px; }
 .login__form-field-toggle {
@@ -253,8 +265,11 @@ a { text-decoration: none; color: inherit; }
 .login__form-field-toggle:hover { background: var(--color-text-placeholder); }
 .login__form-field-toggle-icon { width: 14px; height: 14px; }
 .login__form-field-toggle-icon--eye-off { display: none; }
-.login__form-field-toggle.is-visible .login__form-field-toggle-icon--eye { display: none; }
-.login__form-field-toggle.is-visible .login__form-field-toggle-icon--eye-off { display: block; }
+/* smember-login.js bao trang thai bang aria-pressed; giu them .is-visible de tuong thich nguoc. */
+.login__form-field-toggle.is-visible .login__form-field-toggle-icon--eye,
+.login__form-field-toggle[aria-pressed="true"] .login__form-field-toggle-icon--eye { display: none; }
+.login__form-field-toggle.is-visible .login__form-field-toggle-icon--eye-off,
+.login__form-field-toggle[aria-pressed="true"] .login__form-field-toggle-icon--eye-off { display: block; }
 
 .login__form-btn--login {
   height: var(--button-height);

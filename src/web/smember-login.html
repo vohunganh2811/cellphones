@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Đăng nhập SMEMBER</title>
 <meta name="description" content="Đăng nhập hệ thống khách hàng thành viên SMEMBER - CellphoneS & Điện thoại vui">
-<link rel="icon" href="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/favicon.ico">
+<link rel="icon" href="../../assets/images/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="smember-login.css">
+<link rel="stylesheet" href="../style/smember-login.css">
 </head>
 <body>
 
@@ -24,11 +24,11 @@
       <div class="login__promo-logos">
         <a class="login__promo-logo-link" href="https://cellphones.com.vn" target="_blank" rel="noopener">
           <img class="login__promo-logo login__promo-logo--cellphones"
-               src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/cellphones-long-icon.6a80e2a6.svg" alt="CellphoneS">
+               src="../../assets/images/cellphones-long-icon.6a80e2a6.svg" alt="CellphoneS">
         </a>
         <a class="login__promo-logo-link" href="https://dienthoaivui.com.vn" target="_blank" rel="noopener">
           <img class="login__promo-logo login__promo-logo--dtv"
-               src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/dtv-long-icon.40a11e1d.svg" alt="Điện thoại vui">
+               src="../../assets/images/dtv-long-icon.40a11e1d.svg" alt="Điện thoại vui">
         </a>
       </div>
       <div class="login__promo-heading">
@@ -49,7 +49,7 @@
 
         <div class="login__promo-benefits">
         <img class="login__promo-pattern"
-             src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/promotion-smember.088823eb.png"
+             src="../../assets/images/promotion-smember.088823eb.png"
              alt="" aria-hidden="true">
 
         <ul class="login__promo-benefits-list">
@@ -105,7 +105,7 @@
       </div>
 
       <img class="login__promo-illustration"
-           src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/smember-promotion-ant.a7833c47.png" alt="SMEMBER mascot">
+           src="../../assets/images/smember-promotion-ant.a7833c47.png" alt="SMEMBER mascot">
     </div>
   </section>
 
@@ -115,26 +115,32 @@
     <div class="login__form">
       <h2 class="login__form-title">Đăng nhập SMEMBER</h2>
 
-      <form class="login__form-fields" action="#" method="post" novalidate>
+      <form class="login__form-fields" action="#" method="post" novalidate data-login-form>
         <div class="login__form-field">
           <label class="login__form-field-label" for="login-phone">Số điện thoại</label>
           <input class="login__form-field-input" type="tel" id="login-phone" name="phone"
                  placeholder="Nhập số điện thoại của bạn" maxlength="10" autocomplete="tel" inputmode="numeric"
-                 aria-describedby="phone-error">
-          <p class="login__form-field-message" id="phone-error" role="alert">Vui lòng nhập số điện thoại</p>
+                 aria-describedby="phone-error" data-login-field="phone">
+          <p class="login__form-field-message" id="phone-error" role="alert" data-login-field-error="phone"></p>
         </div>
 
         <div class="login__form-field">
           <label class="login__form-field-label" for="login-password">Mật khẩu</label>
           <div class="login__form-field-wrap">
             <input class="login__form-field-input" type="password" id="login-password" name="password"
-                   placeholder="Nhập mật khẩu của bạn" autocomplete="current-password">
-            <button class="login__form-field-toggle" type="button" aria-label="Hiện/ẩn mật khẩu">
+                   placeholder="Nhập mật khẩu của bạn" autocomplete="current-password"
+                   aria-describedby="password-error password-caps" data-login-field="password">
+            <button class="login__form-field-toggle" type="button" aria-label="Hiện mật khẩu"
+                    aria-pressed="false" data-password-toggle>
               <svg class="login__form-field-toggle-icon login__form-field-toggle-icon--eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               <svg class="login__form-field-toggle-icon login__form-field-toggle-icon--eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="m14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
             </button>
           </div>
+          <p class="login__form-field-message" id="password-error" role="alert" data-login-field-error="password"></p>
+          <p class="login__form-caps" id="password-caps" role="status" data-password-caps></p>
         </div>
+
+        <p class="login__form-error" role="alert" data-login-error></p>
 
         <button class="login__form-btn login__form-btn--login" type="submit">Đăng nhập</button>
         <a class="login__form-forgot" href="/restore-password">Quên mật khẩu?</a>
@@ -146,11 +152,11 @@
 
       <div class="login__form-social">
         <button class="login__form-social-item login__form-social-item--google" type="button">
-          <img class="login__form-social-item-icon" src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/logo-google.b6f9570f.svg" alt="">
+          <img class="login__form-social-item-icon" src="../../assets/images/logo-google.b6f9570f.svg" alt="">
           <span class="login__form-social-item-label">Google</span>
         </button>
         <button class="login__form-social-item login__form-social-item--zalo" type="button">
-          <img class="login__form-social-item-icon" src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/logo-zalo.120d889f.svg" alt="">
+          <img class="login__form-social-item-icon" src="../../assets/images/logo-zalo.120d889f.svg" alt="">
           <span class="login__form-social-item-label">Zalo</span>
         </button>
       </div>
@@ -176,45 +182,13 @@
   <label class="login__cta-bar-btn login__cta-bar-btn--login" for="login-panel-toggle" role="button">Đăng nhập</label>
 </div>
 
-<script>
-/* Vanilla JS nhỏ: hiện/ẩn mật khẩu + demo loading/error (bỏ được khi có backend) */
-(function () {
-  var toggle = document.querySelector('.login__form-field-toggle');
-  var pass = document.getElementById('login-password');
-  if (toggle && pass) {
-    toggle.addEventListener('click', function () {
-      var show = pass.type === 'password';
-      pass.type = show ? 'text' : 'password';
-      toggle.classList.toggle('is-visible', show);
-      toggle.setAttribute('aria-label', show ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
-    });
-  }
-
-  var form = document.querySelector('.login__form-fields');
-  var btn = document.querySelector('.login__form-btn--login');
-  if (form && btn) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var phone = document.getElementById('login-phone');
-      var field = phone ? phone.closest('.login__form-field') : null;
-      if (field) {
-        var empty = !phone.value.trim();
-        field.classList.toggle('login__form-field--error', empty);
-        field.classList.toggle('login__form-field--valid', !empty);
-      }
-      btn.classList.add('is-loading');
-      btn.disabled = true;
-      btn.setAttribute('aria-busy', 'true');
-      btn.textContent = 'Đang đăng nhập…';
-      setTimeout(function () {
-        btn.classList.remove('is-loading');
-        btn.disabled = false;
-        btn.removeAttribute('aria-busy');
-        btn.textContent = 'Đăng nhập';
-      }, 1500);
-    });
-  }
-})();
-</script>
+<script defer src="../script/model/AAccount.js"></script>
+<script defer src="../script/model/Account.js"></script>
+<script defer src="../script/model/AUser.js"></script>
+<script defer src="../script/model/User.js"></script>
+<script defer src="../script/data/demo-data.js"></script>
+<script defer src="../script/auth/AuthService.js"></script>
+<script defer src="../script/auth/LoginController.js"></script>
+<script defer src="../script/page/smember-login.js"></script>
 </body>
 </html>
