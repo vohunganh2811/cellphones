@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Trang tài khoản CellphoneS - hồ sơ thành viên, thống kê, địa chỉ, mật khẩu và tài khoản liên kết (desktop)">
     <title>Thông tin tài khoản | CellphoneS</title>
-    <link rel="stylesheet" href="user-info.css">
+    <link rel="stylesheet" href="../style/user-info.css">
   </head>
   <body class="user">
     <a class="skip-link" href="#main-content">Chuyển đến nội dung chính</a>
 
     <header class="header" aria-label="Đầu trang">
       <div class="header__inner">
-        <a class="header__back" href="index.html" aria-label="Quay lại">
+        <a class="header__back" href="../../index.html" aria-label="Quay lại">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
         </a>
         <h1>Tài khoản</h1>
         <div class="header__actions" aria-hidden="true"></div>
 
-        <a class="header__logo" href="index.html" aria-label="CellphoneS">
-          <img src="assets/user-info/Logo_CPS.webp" alt="">
+        <a class="header__logo" href="../../index.html" aria-label="CellphoneS">
+          <img src="../../assets/user-info/Logo_CPS.webp" alt="">
         </a>
 
         <form class="header__search" role="search" action="#" method="get">
@@ -58,7 +58,7 @@
         <div class="member-overview__cards">
           <article class="member-card">
             <div class="member-card__avatar">
-              <img src="assets/user-info/avata-ant.b574f3e9.svg" alt="" width="56" height="60">
+              <img src="../../assets/user-info/avata-ant.b574f3e9.svg" alt="" width="56" height="60">
             </div>
             <div class="member-card__info">
               <h2 class="member-card__name" data-user-field="displayName">Thành viên Smember</h2>
@@ -108,7 +108,7 @@
           <section class="brand-switch" aria-label="Kênh thành viên">
             <p class="brand-switch__header">Bạn đang ở kênh thành viên</p>
             <div class="brand-switch__body">
-              <img class="brand-switch__logo" src="assets/user-info/cellphones-icon.1b92082f.svg" alt="" width="56" height="56">
+              <img class="brand-switch__logo" src="../../assets/user-info/cellphones-icon.1b92082f.svg" alt="" width="56" height="56">
               <div class="brand-switch__actions">
                 <button class="brand-switch__toggle" type="button" aria-haspopup="listbox" aria-label="Kênh ưu đãi hiện tại CellphoneS">
                   <span class="brand-switch__toggle-label">CellphoneS</span>
@@ -247,14 +247,14 @@
             <p class="app-promo__content">Mua sắm dễ dàng - Ưu đãi ngập tràn cùng app CellphoneS.</p>
             <div class="app-promo__badges">
               <span>
-                <img src="assets/user-info/QR_appGeneral-v2.webp" alt="QR code tải ứng dụng CellphoneS">
+                <img src="../../assets/user-info/QR_appGeneral-v2.webp" alt="QR code tải ứng dụng CellphoneS">
               </span>
               <div>
                 <a class="app-promo__badge app-promo__badge--google" href="https://play.google.com/" target="_blank" rel="noopener" aria-label="Tải ứng dụng CellphoneS trên Google Play">
-                  <img src="assets/user-info/downloadANDROID.webp" alt="">
+                  <img src="../../assets/user-info/downloadANDROID.webp" alt="">
                 </a>
                 <a class="app-promo__badge app-promo__badge--appstore" href="https://www.apple.com/app-store/" target="_blank" rel="noopener" aria-label="Tải ứng dụng CellphoneS trên App Store">
-                  <img src="assets/user-info/downloadiOS.webp" alt="">
+                  <img src="../../assets/user-info/downloadiOS.webp" alt="">
                 </a>
               </div>
             </div>
@@ -314,7 +314,7 @@
             </header>
             <div class="address-card__body" data-user-addresses>
               <div aria-hidden="true">
-                <img src="assets/user-info/empty.f8088c4d.png" alt="" width="140" height="104">
+                <img src="../../assets/user-info/empty.f8088c4d.png" alt="" width="140" height="104">
               </div>
               <p class="address-card__empty">Bạn chưa có địa chỉ nào được tạo</p>
             </div>
@@ -340,7 +340,7 @@
                 <li class="linked-accounts__item">
                   <div class="linked-item">
                     <span class="linked-item__icon" aria-hidden="true">
-                      <img src="assets/user-info/logo-google.svg" alt="">
+                      <img src="../../assets/user-info/logo-google.svg" alt="">
                     </span>
                     <span class="linked-item__name">Google</span>
                     <span class="linked-item__status">Đã liên kết</span>
@@ -355,7 +355,7 @@
                 <li class="linked-accounts__item">
                   <div class="linked-item">
                     <span class="linked-item__icon" aria-hidden="true">
-                      <img src="assets/user-info/logo-zalo.svg" alt="">
+                      <img src="../../assets/user-info/logo-zalo.svg" alt="">
                     </span>
                     <span class="linked-item__name">Zalo</span>
                     <span class="sr-only">Chưa liên kết</span>
@@ -400,12 +400,12 @@
         <span class="bottom-nav__item-label">Tài khoản</span>
       </a>
     </nav>
-    <script defer src="src/script/model/AAccount.js"></script>
-    <script defer src="src/script/model/Account.js"></script>
-    <script defer src="src/script/model/AUser.js"></script>
-    <script defer src="src/script/model/User.js"></script>
-    <script defer src="src/script/data/demo-data.js"></script>
-    <script defer src="src/script/auth/AuthService.js"></script>
-    <script defer src="src/script/page/user-info.js"></script>
+    <script defer src="../script/model/AAccount.js"></script>
+    <script defer src="../script/model/Account.js"></script>
+    <script defer src="../script/model/AUser.js"></script>
+    <script defer src="../script/model/User.js"></script>
+    <script defer src="../script/data/demo-data.js"></script>
+    <script defer src="../script/auth/AuthService.js"></script>
+    <script defer src="../script/page/user-info.js"></script>
   </body>
 </html>
