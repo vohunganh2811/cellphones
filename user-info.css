@@ -651,6 +651,104 @@ button { font: inherit; color: inherit; }
   text-align: center;
 }
 
+.address-card__list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+.address-card__item {
+  min-width: 0;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: #f7f7f8;
+}
+
+.address-card__item-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.address-card__item-label {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: lowercase;
+}
+
+.address-card__item-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  background: #e5e7eb;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.address-card__item-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: #6b7280;
+}
+
+.address-card__item-recipient {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0.45rem 0 0;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.address-card__item-separator {
+  width: 1px;
+  height: 1rem;
+  background: #9ca3af;
+}
+
+.address-card__item-text {
+  margin: 0.35rem 0 1rem;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.address-card__item-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  margin-top: auto;
+}
+
+.address-card__item-action {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.address-card__item-action--delete {
+  color: var(--text);
+}
+
+.address-card__item-action:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .address-card__body img {
   width: 140px;
   height: auto;
@@ -917,6 +1015,15 @@ button { font: inherit; color: inherit; }
 
   .info-card__body {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .address-card__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .address-card__item {
+    min-height: 0;
+    padding: 1rem;
   }
 
   .account-content__header {

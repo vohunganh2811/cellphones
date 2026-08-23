@@ -1,10 +1,21 @@
 class User extends AUser {
-  constructor(
-    userID, accountID, displayName,
-    gender = '', email = '', dateOfBirth = '', defaultAddress = '',
-    totalBought = 0, rank = '', totalAmount = 0, listOfAddresses = []
-  ) {
-    super(userID, accountID, displayName);
+  constructor({
+    userId,
+    accountId,
+    displayName,
+    gender = '',
+    email = '',
+    dateOfBirth = '',
+    defaultAddress = '',
+    totalBought = 0,
+    rank = '',
+    totalAmount = 0,
+    listOfAddresses = []
+  }) {
+    super();
+    this._userId = userId;
+    this._accountId = accountId;
+    this._displayName = displayName;
     this._gender = gender;
     this._email = email;
     this._dateOfBirth = dateOfBirth;
@@ -15,27 +26,83 @@ class User extends AUser {
     this._listOfAddresses = listOfAddresses;
   }
 
-  get gender() { return this._gender; }
-  set gender(v) { this._gender = v; }
+  get userId() {
+    return this._userId;
+  }
 
-  get email() { return this._email; }
-  set email(v) { this._email = v; }
+  get accountId() {
+    return this._accountId;
+  }
 
-  get dateOfBirth() { return this._dateOfBirth; }
-  set dateOfBirth(v) { this._dateOfBirth = v; }
+  get displayName() {
+    return this._displayName;
+  }
 
-  get defaultAddress() { return this._defaultAddress; }
-  set defaultAddress(v) { this._defaultAddress = v; }
+  set displayName(value) {
+    this._displayName = value;
+  }
 
-  get totalBought() { return this._totalBought; }
-  set totalBought(v) { this._totalBought = v; }
+  get gender() {
+    return this._gender;
+  }
 
-  get rank() { return this._rank; }
-  set rank(v) { this._rank = v; }
+  set gender(value) {
+    this._gender = value;
+  }
 
-  get totalAmount() { return this._totalAmount; }
-  set totalAmount(v) { this._totalAmount = v; }
+  get email() {
+    return this._email;
+  }
 
-  get listOfAddresses() { return this._listOfAddresses; }
-  set listOfAddresses(v) { this._listOfAddresses = v; }
+  set email(value) {
+    this._email = value;
+  }
+
+  get dateOfBirth() {
+    return this._dateOfBirth;
+  }
+
+  set dateOfBirth(value) {
+    this._dateOfBirth = value;
+  }
+
+  get defaultAddress() {
+    return this._defaultAddress;
+  }
+
+  set defaultAddress(value) {
+    this._defaultAddress = value;
+  }
+
+  get totalBought() {
+    return this._totalBought;
+  }
+
+  set totalBought(value) {
+    this._totalBought = value;
+  }
+
+  get rank() {
+    return this._rank;
+  }
+
+  set rank(value) {
+    this._rank = value;
+  }
+
+  get totalAmount() {
+    return this._totalAmount;
+  }
+
+  set totalAmount(value) {
+    this._totalAmount = value;
+  }
+
+  get listOfAddresses() {
+    return this._listOfAddresses;
+  }
+
+  set listOfAddresses(value) {
+    this._listOfAddresses = value;
+  }
 }

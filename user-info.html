@@ -61,9 +61,9 @@
               <img src="assets/user-info/avata-ant.b574f3e9.svg" alt="" width="56" height="60">
             </div>
             <div class="member-card__info">
-              <h2 class="member-card__name">Thành viên Smember</h2>
-              <div class="member-card__info-row">Số điện thoại: 09** *** ***</div>
-              <span class="member-card__badge">S-NULL</span>
+              <h2 class="member-card__name" data-user-field="displayName">Thành viên Smember</h2>
+              <div class="member-card__info-row">Số điện thoại: <span data-account-field="phone">09** *** ***</span></div>
+              <span class="member-card__badge" data-user-field="rank">S-NULL</span>
               <div class="member-card__info-row">Cập nhật lại sau **/**/****</div>
             </div>
           </article>
@@ -78,7 +78,7 @@
                 </span>
                 <dl class="stat-card__item-content">
                   <dt class="stat-card__item-label">Tổng số đơn hàng đã mua</dt>
-                  <dd class="stat-card__item-value">8 đơn</dd>
+                  <dd class="stat-card__item-value" data-user-field="totalBought">8 đơn</dd>
                 </dl>
               </div>
             </section>
@@ -92,7 +92,7 @@
                 </span>
                 <dl class="stat-card__item-content">
                   <dt class="stat-card__item-label">Tổng tiền tích lũy</dt>
-                  <dd class="stat-card__item-value">12.500.000đ</dd>
+                  <dd class="stat-card__item-value" data-user-field="totalAmount">12.500.000đ</dd>
                 </dl>
               </div>
             </section>
@@ -236,7 +236,7 @@
 
           <span class="account-nav__divider" aria-hidden="true"></span>
 
-          <button class="account-nav-item" type="button">
+          <button class="account-nav-item" type="button" data-auth-action="logout">
             <span class="account-nav-item__icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4.5H7.2A2.2 2.2 0 0 0 5 6.7v10.6a2.2 2.2 0 0 0 2.2 2.2H10"/><path d="M15 16.2 19.2 12 15 7.8"/><path d="M19.2 12H10"/></svg>
             </span>
@@ -262,7 +262,7 @@
         </nav>
 
         <div class="account-content" id="account-content">
-          <div class="account-content__header" role="note">
+          <div class="account-content__header" role="note" data-user-gender-alert>
             <span class="account-content__header-icon" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.2"/><path d="M12 7.6h.01"/></svg>
             </span>
@@ -279,29 +279,29 @@
               <dl class="info-card__field-group">
                 <div class="info-card__field">
                   <dt class="info-card__field-label">Họ tên</dt>
-                  <dd class="info-card__field-value">Thành viên Smember</dd>
+                  <dd class="info-card__field-value" data-user-field="displayName">Thành viên Smember</dd>
                 </div>
                 <div class="info-card__field">
                   <dt class="info-card__field-label">Giới tính</dt>
-                  <dd class="info-card__field-value">Nam</dd>
+                  <dd class="info-card__field-value" data-user-field="gender">Nam</dd>
                 </div>
                 <div class="info-card__field">
                   <dt class="info-card__field-label">Ngày sinh</dt>
-                  <dd class="info-card__field-value">**/**/****</dd>
+                  <dd class="info-card__field-value" data-user-field="dateOfBirth">**/**/****</dd>
                 </div>
               </dl>
               <dl class="info-card__field-group">
                 <div class="info-card__field">
                   <dt class="info-card__field-label">Số điện thoại</dt>
-                  <dd class="info-card__field-value">09** *** ***</dd>
+                  <dd class="info-card__field-value" data-account-field="phone">09** *** ***</dd>
                 </div>
                 <div class="info-card__field">
                   <dt class="info-card__field-label">Email</dt>
-                  <dd class="info-card__field-value">khachhang***@example.com</dd>
+                  <dd class="info-card__field-value" data-user-field="email">khachhang***@example.com</dd>
                 </div>
                 <div class="info-card__field">
                   <dt class="info-card__field-label">Địa chỉ mặc định</dt>
-                  <dd class="info-card__field-value">Quận *, TP. Hồ Chí Minh</dd>
+                  <dd class="info-card__field-value" data-user-field="defaultAddress">Quận *, TP. Hồ Chí Minh</dd>
                 </div>
               </dl>
             </div>
@@ -310,9 +310,9 @@
           <article class="address-card">
             <header class="address-card__header">
               <h2 class="address-card__title">Sổ địa chỉ</h2>
-              <button class="address-card__action" type="button">Thêm địa chỉ</button>
+              <button class="address-card__action" type="button"><span aria-hidden="true">+</span> Thêm địa chỉ</button>
             </header>
-            <div class="address-card__body">
+            <div class="address-card__body" data-user-addresses>
               <div aria-hidden="true">
                 <img src="assets/user-info/empty.f8088c4d.png" alt="" width="140" height="104">
               </div>
@@ -400,5 +400,12 @@
         <span class="bottom-nav__item-label">Tài khoản</span>
       </a>
     </nav>
+    <script defer src="src/script/model/AAccount.js"></script>
+    <script defer src="src/script/model/Account.js"></script>
+    <script defer src="src/script/model/AUser.js"></script>
+    <script defer src="src/script/model/User.js"></script>
+    <script defer src="src/script/data/demo-data.js"></script>
+    <script defer src="src/script/auth/AuthService.js"></script>
+    <script defer src="src/script/page/user-info.js"></script>
   </body>
 </html>

@@ -34,7 +34,7 @@
             <input id="site-search" class="header__search-input" name="q" type="search" placeholder="Bạn muốn mua gì hôm nay?">
           </div>
             <a class="header__cart" href="https://cellphones.com.vn/cart"><span>Giỏ hàng</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="176" cy="416" r="16" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></circle><circle cx="400" cy="416" r="16" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></circle><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 80h64l48 272h256"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M160 288h249.44a8 8 0 0 0 7.85-6.43l28.8-144a8 8 0 0 0-7.85-9.57H128"></path></svg></a>
-          <a class="header__account" href="https://smember.com.vn/"><span>Đăng nhập</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 104c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96zm0 144c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-240C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-49.7 0-95.1-18.3-130.1-48.4 14.9-23 40.4-38.6 69.6-39.5 20.8 6.4 40.6 9.6 60.5 9.6s39.7-3.1 60.5-9.6c29.2 1 54.7 16.5 69.6 39.5-35 30.1-80.4 48.4-130.1 48.4zm162.7-84.1c-24.4-31.4-62.1-51.9-105.1-51.9-10.2 0-26 9.6-57.6 9.6-31.5 0-47.4-9.6-57.6-9.6-42.9 0-80.6 20.5-105.1 51.9C61.9 339.2 48 299.2 48 256c0-110.3 89.7-200 200-200s200 89.7 200 200c0 43.2-13.9 83.2-37.3 115.9z"></path></svg></a>
+          <a class="header__account" data-auth-link="account" href="https://smember.com.vn/"><span>Đăng nhập</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 104c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96zm0 144c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm0-240C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-49.7 0-95.1-18.3-130.1-48.4 14.9-23 40.4-38.6 69.6-39.5 20.8 6.4 40.6 9.6 60.5 9.6s39.7-3.1 60.5-9.6c29.2 1 54.7 16.5 69.6 39.5-35 30.1-80.4 48.4-130.1 48.4zm162.7-84.1c-24.4-31.4-62.1-51.9-105.1-51.9-10.2 0-26 9.6-57.6 9.6-31.5 0-47.4-9.6-57.6-9.6-42.9 0-80.6 20.5-105.1 51.9C61.9 339.2 48 299.2 48 256c0-110.3 89.7-200 200-200s200 89.7 200 200c0 43.2-13.9 83.2-37.3 115.9z"></path></svg></a>
         </div>
       </header>
 
@@ -111,7 +111,7 @@
               <img class="promo-card__icon" src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/ant-smile.webp" alt="Smember">
               <strong class="promo-card__title">Chào mừng bạn đến với CellphoneS</strong>
               <p class="promo-card__desc">Nhập hội thành viên Smember để không bỏ lỡ các ưu đãi hấp dẫn.</p>
-              <div class="promo-card__login-row"><a class="promo-card__login" href="https://cellphones.com.vn/">Đăng nhập</a><span class="promo-card__or">hoặc</span><a class="promo-card__login" href="https://cellphones.com.vn/">Đăng ký</a></div>
+              <div class="promo-card__login-row"><a class="promo-card__login" data-auth-link="account" href="https://cellphones.com.vn/">Đăng nhập</a><span class="promo-card__or">hoặc</span><a class="promo-card__login" href="https://cellphones.com.vn/">Đăng ký</a></div>
               <a class="promo-card__promo" href="https://smember.com.vn/promotion">
                 <svg class="promo-card__promo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18" fill="none"><g clip-path="url(#pc-gift-clip)"><path fill="url(#pc-gift-grad)" d="M2 11.25h6.75V18h-3A3.75 3.75 0 0 1 2 14.25v-3Zm16.5-3a1.5 1.5 0 0 1-1.5 1.5h-6.75V6.718c-.252.02-.503.032-.75.032s-.498-.013-.75-.032V9.75H2a1.5 1.5 0 0 1-1.5-1.5 3 3 0 0 1 3-3h1.303a3.853 3.853 0 0 1-1.303-3 .75.75 0 0 1 1.5 0c0 1.966 1.778 2.647 3.13 2.88-.499-.884-.8-1.867-.88-2.88a2.25 2.25 0 1 1 4.5 0 6.999 6.999 0 0 1-.88 2.88C12.222 4.899 14 4.218 14 2.25a.75.75 0 1 1 1.5 0 3.853 3.853 0 0 1-1.303 3H15.5a3 3 0 0 1 3 3Zm-9.75-6c.09.797.346 1.567.75 2.26.404-.693.66-1.463.75-2.26a.75.75 0 1 0-1.5 0ZM10.25 18h3A3.75 3.75 0 0 0 17 14.25v-3h-6.75V18Z"/></g><defs><lineargradient id="pc-gift-grad" x1="25.438" x2="21.125" y1="4.5" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#E45464"></stop><stop offset="1" stop-color="#D70018"></stop></lineargradient><clippath id="pc-gift-clip"><path fill="#fff" d="M.5 0h18v18H.5z"></path></clippath></defs></svg>
                 <span>Xem ưu đãi Smember</span>
@@ -431,5 +431,12 @@
       </div>
       <button class="body__action body__action--contact" type="button" aria-label="Liên hệ CellphoneS">Liên hệ<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M19 14v4h-2v-4h2M7 14v4H6c-.55 0-1-.45-1-1v-3h2m5-13a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h4v1h-7v2h6c1.66 0 3-1.34 3-3V10a9 9 0 0 0-9-9z"></path></svg></button>
     </div>
+    <script defer src="src/script/model/AAccount.js"></script>
+    <script defer src="src/script/model/Account.js"></script>
+    <script defer src="src/script/model/AUser.js"></script>
+    <script defer src="src/script/model/User.js"></script>
+    <script defer src="src/script/data/demo-data.js"></script>
+    <script defer src="src/script/auth/AuthService.js"></script>
+    <script defer src="src/script/page/main-auth.js"></script>
   </body>
 </html>
