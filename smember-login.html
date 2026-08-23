@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng nhập SMEMBER</title>
+<meta name="description" content="Đăng nhập hệ thống khách hàng thành viên SMEMBER - CellphoneS & Điện thoại vui">
+<link rel="icon" href="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="smember-login.css">
+</head>
+<body>
+
+<!-- Checkbox hack (CSS-only): điều khiển form slide-up trên mobile -->
+<input type="checkbox" id="login-panel-toggle" class="login__panel-toggle" hidden>
+
+<main class="login">
+
+  <!-- ==================== Promo panel (44%) ==================== -->
+  <section class="login__promo">
+    <div class="login__promo-header">
+      <div class="login__promo-logos">
+        <a class="login__promo-logo-link" href="https://cellphones.com.vn" target="_blank" rel="noopener">
+          <img class="login__promo-logo login__promo-logo--cellphones"
+               src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/cellphones-long-icon.6a80e2a6.svg" alt="CellphoneS">
+        </a>
+        <a class="login__promo-logo-link" href="https://dienthoaivui.com.vn" target="_blank" rel="noopener">
+          <img class="login__promo-logo login__promo-logo--dtv"
+               src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/dtv-long-icon.40a11e1d.svg" alt="Điện thoại vui">
+        </a>
+      </div>
+      <div class="login__promo-heading">
+        <h1 class="login__promo-heading-title">
+          Nhập hội khách hàng thành viên
+          <span class="login__promo-heading-highlight">SMEMBER</span>
+        </h1>
+        <p class="login__promo-heading-sub">Để không bỏ lỡ các ưu đãi hấp dẫn từ CellphoneS</p>
+      </div>
+    </div>
+
+    <div class="login__promo-body">
+      <div class="login__promo-benefits-wrap">
+        <span class="login__promo-benefits-corner" aria-hidden="true"></span>
+        <span class="login__promo-benefits-corner" aria-hidden="true"></span>
+        <span class="login__promo-benefits-corner" aria-hidden="true"></span>
+        <span class="login__promo-benefits-corner" aria-hidden="true"></span>
+
+        <div class="login__promo-benefits">
+        <img class="login__promo-pattern"
+             src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/promotion-smember.088823eb.png"
+             alt="" aria-hidden="true">
+
+        <ul class="login__promo-benefits-list">
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text"><strong>Chiết khấu đến 5%</strong> khi mua các sản phẩm mua tại CellphoneS</span>
+          </li>
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text"><strong>Miễn phí giao hàng</strong> cho thành viên SMEM, SVIP và cho đơn hàng từ 300.000đ</span>
+          </li>
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text"><strong>Tặng voucher sinh nhật đến 500.000đ</strong> cho khách hàng thành viên</span>
+          </li>
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text">Trợ giá thu cũ lên đời đến <strong>1 triệu</strong></span>
+          </li>
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text">Thăng hạng nhận voucher <strong>đến 300.000đ</strong></span>
+          </li>
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text">Đặc quyền S-Student/S-Teacher <strong>ưu đãi thêm đến 10%</strong></span>
+          </li>
+          <li class="login__promo-benefits-items">
+            <span class="login__promo-benefit-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 14v8h-4a3 3 0 0 1 -3 -3v-4a1 1 0 0 1 1 -1h6zm8 0a1 1 0 0 1 1 1v4a3 3 0 0 1 -3 3h-4v-8h6zm-2.5 -12a3.5 3.5 0 0 1 3.163 5h.337a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-7v-5h-2v5h-7a2 2 0 0 1 -2 -2v-1a2 2 0 0 1 2 -2h.337a3.486 3.486 0 0 1 -.337 -1.5c0 -1.933 1.567 -3.5 3.483 -3.5c1.755 -.03 3.312 1.092 4.381 2.934l.136 .243c1.033 -1.914 2.56 -3.114 4.291 -3.175l.209 -.002zm-9 2a1.5 1.5 0 0 0 0 3h3.143c-.741 -1.905 -1.949 -3.02 -3.143 -3zm8.983 0c-1.18 -.02 -2.385 1.096 -3.126 3h3.143a1.5 1.5 0 1 0 -.017 -3z"/></svg>
+            </span>
+            <span class="login__promo-benefit-item-text"><strong>S-Business:</strong> Chiết khấu đến 8% dành riêng cho khách hàng doanh nghiệp</span>
+          </li>
+        </ul>
+
+        <a class="login__promo-benefits-cta" href="https://cellphones.com.vn/uu-dai-smember" target="_blank" rel="noopener">
+          <span class="login__promo-benefits-cta-label">Xem chi tiết chính sách ưu đãi Smember</span>
+          <svg class="login__promo-benefits-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        </div>
+      </div>
+
+      <img class="login__promo-illustration"
+           src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/smember-promotion-ant.a7833c47.png" alt="SMEMBER mascot">
+    </div>
+  </section>
+
+  <!-- ==================== Form panel (56%) ==================== -->
+  <section class="login__form-panel">
+    <label class="login__form-close" for="login-panel-toggle" aria-label="Đóng">×</label>
+    <div class="login__form">
+      <h2 class="login__form-title">Đăng nhập SMEMBER</h2>
+
+      <form class="login__form-fields" action="#" method="post" novalidate>
+        <div class="login__form-field">
+          <label class="login__form-field-label" for="login-phone">Số điện thoại</label>
+          <input class="login__form-field-input" type="tel" id="login-phone" name="phone"
+                 placeholder="Nhập số điện thoại của bạn" maxlength="10" autocomplete="tel" inputmode="numeric"
+                 aria-describedby="phone-error">
+          <p class="login__form-field-message" id="phone-error" role="alert">Vui lòng nhập số điện thoại</p>
+        </div>
+
+        <div class="login__form-field">
+          <label class="login__form-field-label" for="login-password">Mật khẩu</label>
+          <div class="login__form-field-wrap">
+            <input class="login__form-field-input" type="password" id="login-password" name="password"
+                   placeholder="Nhập mật khẩu của bạn" autocomplete="current-password">
+            <button class="login__form-field-toggle" type="button" aria-label="Hiện/ẩn mật khẩu">
+              <svg class="login__form-field-toggle-icon login__form-field-toggle-icon--eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="login__form-field-toggle-icon login__form-field-toggle-icon--eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="m14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <button class="login__form-btn login__form-btn--login" type="submit">Đăng nhập</button>
+        <a class="login__form-forgot" href="/restore-password">Quên mật khẩu?</a>
+      </form>
+
+      <div class="login__form-divider">
+        <span class="login__form-divider-text">Hoặc đăng nhập bằng</span>
+      </div>
+
+      <div class="login__form-social">
+        <button class="login__form-social-item login__form-social-item--google" type="button">
+          <img class="login__form-social-item-icon" src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/logo-google.b6f9570f.svg" alt="">
+          <span class="login__form-social-item-label">Google</span>
+        </button>
+        <button class="login__form-social-item login__form-social-item--zalo" type="button">
+          <img class="login__form-social-item-icon" src="docs/designs/CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng_files/logo-zalo.120d889f.svg" alt="">
+          <span class="login__form-social-item-label">Zalo</span>
+        </button>
+      </div>
+
+      <p class="login__form-register">
+        <span class="login__form-register-text">Bạn chưa có tài khoản?</span>
+        <a class="login__form-register-link" href="/register">Đăng ký ngay</a>
+      </p>
+
+      <footer class="login__form-footer">
+        <div class="login__form-footer-content">
+          <p class="login__form-footer-text">Mua sắm, sửa chữa tại<br><a class="login__form-footer-link" href="https://cellphones.com.vn" target="_blank" rel="noopener">cellphones.com.vn</a> và <a class="login__form-footer-link" href="https://dienthoaivui.com.vn" target="_blank" rel="noopener">dienthoaivui.com.vn</a></p>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== Mobile CTA bar (sticky bottom) ==================== -->
+<div class="login__cta-bar">
+  <a class="login__cta-bar-btn login__cta-bar-btn--register" href="/register">Đăng ký</a>
+  <label class="login__cta-bar-btn login__cta-bar-btn--login" for="login-panel-toggle" role="button">Đăng nhập</label>
+</div>
+
+<script>
+/* Vanilla JS nhỏ: hiện/ẩn mật khẩu + demo loading/error (bỏ được khi có backend) */
+(function () {
+  var toggle = document.querySelector('.login__form-field-toggle');
+  var pass = document.getElementById('login-password');
+  if (toggle && pass) {
+    toggle.addEventListener('click', function () {
+      var show = pass.type === 'password';
+      pass.type = show ? 'text' : 'password';
+      toggle.classList.toggle('is-visible', show);
+      toggle.setAttribute('aria-label', show ? 'Ẩn mật khẩu' : 'Hiện mật khẩu');
+    });
+  }
+
+  var form = document.querySelector('.login__form-fields');
+  var btn = document.querySelector('.login__form-btn--login');
+  if (form && btn) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var phone = document.getElementById('login-phone');
+      var field = phone ? phone.closest('.login__form-field') : null;
+      if (field) {
+        var empty = !phone.value.trim();
+        field.classList.toggle('login__form-field--error', empty);
+        field.classList.toggle('login__form-field--valid', !empty);
+      }
+      btn.classList.add('is-loading');
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      btn.textContent = 'Đang đăng nhập…';
+      setTimeout(function () {
+        btn.classList.remove('is-loading');
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        btn.textContent = 'Đăng nhập';
+      }, 1500);
+    });
+  }
+})();
+</script>
+</body>
+</html>
