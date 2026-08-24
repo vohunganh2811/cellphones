@@ -38,7 +38,7 @@ class AuthService {
       return { ok: false, code: 'ACCOUNT_NOT_FOUND' };
     }
     if (!account.login(trimmedPhone, password)) {
-      return { ok: false, code: 'SESSION_ERROR' };
+      return { ok: false, code: 'PASSWORD_INCORRECT' };
     }
     return { ok: true };
   }
