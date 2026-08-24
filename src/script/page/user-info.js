@@ -14,7 +14,7 @@
     setUserField('displayName', user.displayName);
     setUserField('rank', user.rank);
     setAccountField('phone', account.phone);
-    setUserField('totalBought', `${user.totalBought} đơn`);
+    setUserField('totalBought', `${user.totalBought}`);
     setUserField('totalAmount', formatVND(user.totalAmount));
     setUserField('gender', user.gender);
     setUserField('dateOfBirth', formatDate(user.dateOfBirth));
