@@ -13,10 +13,6 @@ class AAccount {
     throw new Error('accountId is an abstract getter and must be implemented by a subclass.');
   }
 
-  set password(value) {
-    throw new Error('password is an abstract setter and must be implemented by a subclass.');
-  }
-
   get role() {
     throw new Error('role is an abstract getter and must be implemented by a subclass.');
   }

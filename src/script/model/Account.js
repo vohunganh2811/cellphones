@@ -21,14 +21,6 @@ class Account extends AAccount {
     this._phone = value;
   }
 
-  get password() {
-    return this._password;
-  }
-
-  set password(value) {
-    this._password = value;
-  }
-
   get role() {
     return this._role;
   }
