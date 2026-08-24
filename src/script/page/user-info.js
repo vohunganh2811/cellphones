@@ -8,6 +8,8 @@
   }
 
   renderUserInfo(current.account, current.user);
+  bindPhoneVisibility(current.account.phone);
+  bindBrandSwitch();
   bindLogout(authService);
 
   function renderUserInfo(account, user) {
@@ -118,6 +120,148 @@
       list.appendChild(item);
     });
     container.appendChild(list);
+  }
+
+  function maskPhone(phone) {
+    const s = String(phone || '').replace(/\D/g, '');
+    if (s.length < 6) {
+      return s;
+    }
+    return `${s.slice(0, 3)}${'*'.repeat(s.length - 5)}${s.slice(-2)}`;
+  }
+
+  function bindPhoneVisibility(phone) {
+    const valueNode = document.querySelector('[data-user-phone-overview]');
+    const button = document.querySelector('.member-card__phone-toggle');
+    if (!valueNode || !button) {
+      return;
+    }
+    const masked = maskPhone(phone);
+    const full = String(phone || '');
+    let visible = false;
+
+    function apply() {
+      valueNode.textContent = visible ? full : masked;
+      button.setAttribute('aria-pressed', String(visible));
+      button.setAttribute('aria-label', visible ? 'Ẩn số điện thoại' : 'Hiện số điện thoại');
+    }
+
+    apply();
+
+    button.addEventListener('click', () => {
+      visible = !visible;
+      apply();
+    });
+  }
+
+  function bindBrandSwitch() {
+    const toggle = document.querySelector('.brand-switch__toggle');
+    const listbox = document.querySelector('.brand-switch__listbox');
+    if (!toggle || !listbox) {
+      return;
+    }
+    const options = Array.from(listbox.querySelectorAll('[role="option"]'));
+    if (options.length === 0) {
+      return;
+    }
+    const labelNode = toggle.querySelector('[data-brand-switch-label]');
+
+    function isOpen() {
+      return toggle.getAttribute('aria-expanded') === 'true';
+    }
+
+    function selectedOption() {
+      return options.find((o) => o.getAttribute('aria-selected') === 'true') || options[0];
+    }
+
+    function open() {
+      toggle.setAttribute('aria-expanded', 'true');
+      listbox.hidden = false;
+      selectedOption().focus();
+    }
+
+    function close() {
+      toggle.setAttribute('aria-expanded', 'false');
+      listbox.hidden = true;
+    }
+
+    function select(option) {
+      const value = option.getAttribute('data-brand-switch-option');
+      options.forEach((o) => {
+        o.setAttribute('aria-selected', o === option ? 'true' : 'false');
+      });
+      if (labelNode) {
+        labelNode.textContent = value;
+      }
+      toggle.setAttribute('aria-label', `Kênh ưu đãi hiện tại ${value}`);
+      close();
+      toggle.focus();
+    }
+
+    function focusOption(current, step) {
+      const index = options.indexOf(current);
+      const nextIndex = (index + step + options.length) % options.length;
+      options[nextIndex].focus();
+    }
+
+    toggle.addEventListener('click', () => {
+      if (isOpen()) {
+        close();
+      } else {
+        open();
+      }
+    });
+
+    toggle.addEventListener('keydown', (event) => {
+      if (isOpen()) {
+        return;
+      }
+      if (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        open();
+      }
+    });
+
+    listbox.addEventListener('keydown', (event) => {
+      const current = document.activeElement;
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        focusOption(current, 1);
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        focusOption(current, -1);
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        options[0].focus();
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        options[options.length - 1].focus();
+      } else if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (current && current.getAttribute('role') === 'option') {
+          select(current);
+        }
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        close();
+        toggle.focus();
+      } else if (event.key === 'Tab') {
+        close();
+      }
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => select(option));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!isOpen()) {
+        return;
+      }
+      if (!toggle.contains(event.target) && !listbox.contains(event.target)) {
+        close();
+      }
+    });
   }
 
   function bindLogout(authServiceRef) {
