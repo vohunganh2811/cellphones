@@ -64,7 +64,7 @@ button { font: inherit; color: inherit; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 66px;
+  height: 72px;
   color: #fff;
   background: linear-gradient(180deg, var(--header-grad-start), var(--header-grad-end));
   box-shadow: 0 2px 8px rgb(0 0 0 / 16%);
@@ -82,11 +82,12 @@ button { font: inherit; color: inherit; }
 }
 
 .header__logo { flex: 0 0 auto; display: block; padding: 0.3em 0; }
-.header__logo img { width: 8.4em; height: 1.75em; }
+.header__logo img { width: 11em; height: 3em; }
 
 .header__search {
   flex: 1 1 auto;
   min-width: 0;
+  max-width: 50%;
   height: 2.25rem;
   position: relative;
   display: flex;
@@ -129,7 +130,6 @@ button { font: inherit; color: inherit; }
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  margin-left: auto;
   flex: 0 0 auto;
 }
 
