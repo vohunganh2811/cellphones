@@ -232,11 +232,7 @@ a { text-decoration: none; color: inherit; }
   outline: none;
   border-color: var(--color-border-strong);
 }
-.login__form-field--error .login__form-field-input { border-color: #EF4444; }
-.login__form-field--error .login__form-field-input:focus { border-color: #EF4444; }
-.login__form-field--valid .login__form-field-input { border-color: #10B981; }
 .login__form-field-message { display: none; margin: 0; font-size: 12px; color: #EF4444; }
-.login__form-field--error .login__form-field-message { display: block; }
 
 /* Trang thai loi do LoginController dieu khien: no set aria-invalid tren input
    va ghi textContent vao cac o thong bao, nen CSS bam theo 2 tin hieu do. */
@@ -265,10 +261,8 @@ a { text-decoration: none; color: inherit; }
 .login__form-field-toggle:hover { background: var(--color-text-placeholder); }
 .login__form-field-toggle-icon { width: 14px; height: 14px; }
 .login__form-field-toggle-icon--eye-off { display: none; }
-/* smember-login.js bao trang thai bang aria-pressed; giu them .is-visible de tuong thich nguoc. */
-.login__form-field-toggle.is-visible .login__form-field-toggle-icon--eye,
+/* smember-login.js bao trang thai bang aria-pressed. */
 .login__form-field-toggle[aria-pressed="true"] .login__form-field-toggle-icon--eye { display: none; }
-.login__form-field-toggle.is-visible .login__form-field-toggle-icon--eye-off,
 .login__form-field-toggle[aria-pressed="true"] .login__form-field-toggle-icon--eye-off { display: block; }
 
 .login__form-btn--login {

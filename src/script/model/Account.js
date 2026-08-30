@@ -60,7 +60,7 @@ class Account extends AAccount {
 
   login(phone, password) {
     if (phone !== this._phone || password !== this._password) {
-      return false;
+      return { ok: false, code: LoginErrorCode.PASSWORD_INCORRECT };
     }
     const lastLoginAt = new Date().toISOString();
     this._lastLoginAt = lastLoginAt;
@@ -71,8 +71,11 @@ class Account extends AAccount {
         lastLoginAt
       }));
     } catch (error) {
-      return false;
+      return { ok: false, code: LoginErrorCode.SESSION_WRITE_FAILED };
     }
-    return sessionStorage.getItem('loginInfo') !== null;
+    if (sessionStorage.getItem('loginInfo') === null) {
+      return { ok: false, code: LoginErrorCode.SESSION_WRITE_FAILED };
+    }
+    return { ok: true };
   }
 }
