@@ -1,4 +1,11 @@
 (function () {
+  const UNSET_LABEL = 'Chưa cập nhật';
+
+  function orUnset(value) {
+    const text = String(value || '').trim();
+    return text || UNSET_LABEL;
+  }
+
   const authService = new AuthService(DEMO_ACCOUNTS, DEMO_USERS);
 
   const current = authService.resolveCurrentUser();
@@ -18,10 +25,10 @@
     setAccountField('phone', account.phone);
     setUserField('totalBought', `${user.totalBought}`);
     setUserField('totalAmount', formatVND(user.totalAmount));
-    setUserField('gender', user.gender);
+    setUserField('gender', orUnset(user.gender));
     setUserField('dateOfBirth', formatDate(user.dateOfBirth));
     setUserField('email', user.email);
-    setUserField('defaultAddress', user.defaultAddress);
+    setUserField('defaultAddress', orUnset(user.defaultAddress));
 
     const genderAlert = document.querySelector('[data-user-gender-alert]');
     if (genderAlert) {
@@ -53,7 +60,7 @@
 
   function formatDate(value) {
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || ''));
-    return match ? `${match[3]}/${match[2]}/${match[1]}` : 'Chưa cập nhật';
+    return match ? `${match[3]}/${match[2]}/${match[1]}` : UNSET_LABEL;
   }
 
   function renderAddresses(user) {
@@ -62,10 +69,15 @@
       return;
     }
     const addresses = user.listOfAddresses || [];
+    container.replaceChildren();
     if (addresses.length === 0) {
+      container.append(createEmptyAddressState());
       return;
     }
-    container.replaceChildren();
+    container.appendChild(createAddressList(addresses));
+  }
+
+  function createAddressList(addresses) {
     const list = document.createElement('ul');
     list.className = 'address-card__list';
     addresses.forEach((address) => {
@@ -119,7 +131,24 @@
       item.append(heading, recipient, addressText, actions);
       list.appendChild(item);
     });
-    container.appendChild(list);
+    return list;
+  }
+
+  function createEmptyAddressState() {
+    const media = document.createElement('div');
+    media.setAttribute('aria-hidden', 'true');
+    const img = document.createElement('img');
+    img.src = '../../assets/user-info/empty.f8088c4d.png';
+    img.alt = '';
+    img.width = 140;
+    img.height = 104;
+    media.appendChild(img);
+    const text = document.createElement('p');
+    text.className = 'address-card__empty';
+    text.textContent = 'Bạn chưa có địa chỉ nào được tạo';
+    const fragment = document.createDocumentFragment();
+    fragment.append(media, text);
+    return fragment;
   }
 
   function maskPhone(phone) {
