@@ -1,16 +1,35 @@
 (function () {
-  const form = document.querySelector('[data-login-form]');
-  const phoneInput = document.querySelector('[data-login-field="phone"]');
-  const passwordInput = document.querySelector('[data-login-field="password"]');
-  const phoneErrorOutput = document.querySelector('[data-login-field-error="phone"]');
-  const passwordErrorOutput = document.querySelector('[data-login-field-error="password"]');
-  const errorOutput = document.querySelector('[data-login-error]');
-  const passwordToggle = document.querySelector('[data-password-toggle]');
-  const capsWarning = document.querySelector('[data-password-caps]');
+  const hooks = {
+    form: '[data-login-form]',
+    phone: '[data-login-field="phone"]',
+    password: '[data-login-field="password"]',
+    phoneError: '[data-login-field-error="phone"]',
+    passwordError: '[data-login-field-error="password"]',
+    error: '[data-login-error]',
+    passwordToggle: '[data-password-toggle]',
+    capsWarning: '[data-password-caps]'
+  };
 
-  if (!form || !phoneInput || !passwordInput || !phoneErrorOutput || !passwordErrorOutput || !errorOutput || !passwordToggle || !capsWarning) {
+  const nodes = {};
+  const missing = [];
+  for (const [name, selector] of Object.entries(hooks)) {
+    const node = document.querySelector(selector);
+    if (node) {
+      nodes[name] = node;
+    } else {
+      missing.push(`${selector} (${name})`);
+    }
+  }
+
+  if (missing.length > 0) {
+    console.error(
+      '[smember-login] Thiếu DOM hook — trang đăng nhập KHÔNG được khởi tạo.\n' +
+      'Nếu bạn vừa sửa HTML, hãy kiểm tra các selector sau:\n- ' + missing.join('\n- ')
+    );
     return;
   }
+
+  const { form, phone: phoneInput, password: passwordInput, phoneError: phoneErrorOutput, passwordError: passwordErrorOutput, error: errorOutput, passwordToggle, capsWarning } = nodes;
 
   const authService = new AuthService(DEMO_ACCOUNTS, DEMO_USERS);
 

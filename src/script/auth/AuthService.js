@@ -25,20 +25,21 @@ class AuthService {
   login(phone, password) {
     const trimmedPhone = String(phone || '').trim();
     if (!trimmedPhone) {
-      return { ok: false, code: 'PHONE_REQUIRED' };
+      return { ok: false, code: LoginErrorCode.PHONE_REQUIRED };
     }
     if (!password) {
-      return { ok: false, code: 'PASSWORD_REQUIRED' };
+      return { ok: false, code: LoginErrorCode.PASSWORD_REQUIRED };
     }
     if (!AuthService.isValidPhone(trimmedPhone)) {
-      return { ok: false, code: 'PHONE_INVALID' };
+      return { ok: false, code: LoginErrorCode.PHONE_INVALID };
     }
     const account = this.findAccountByPhone(trimmedPhone);
     if (!account) {
-      return { ok: false, code: 'ACCOUNT_NOT_FOUND' };
+      return { ok: false, code: LoginErrorCode.ACCOUNT_NOT_FOUND };
     }
-    if (!account.login(trimmedPhone, password)) {
-      return { ok: false, code: 'PASSWORD_INCORRECT' };
+    const result = account.login(trimmedPhone, password);
+    if (!result.ok) {
+      return { ok: false, code: result.code };
     }
     return { ok: true };
   }
